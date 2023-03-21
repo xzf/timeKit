@@ -38,3 +38,11 @@ func GetYearStart(t time.Time) time.Time {
 func GetYearEnd(t time.Time) time.Time {
 	return time.Date(t.Year(), 12, 31, 0, 0, 0, 0, t.Location())
 }
+
+func GetLastDay(t time.Time) time.Time {
+	return t.Add(Day * -1)
+}
+
+func GetNextDay(t time.Time) time.Time {
+	return t.Add(Day)
+}
