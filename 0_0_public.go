@@ -28,7 +28,7 @@ func GetMonthEnd(t time.Time) time.Time {
 	for oldMonth == t.Month() {
 		t = t.Add(Day)
 	}
-	return t.Add(Day * -1)
+	return GetDateEnd(t.Add(Day * -1))
 }
 
 func GetYearStart(t time.Time) time.Time {
@@ -36,7 +36,7 @@ func GetYearStart(t time.Time) time.Time {
 }
 
 func GetYearEnd(t time.Time) time.Time {
-	return time.Date(t.Year(), 12, 31, 0, 0, 0, 0, t.Location())
+	return GetDateEnd(time.Date(t.Year(), 12, 31, 0, 0, 0, 0, t.Location()))
 }
 
 func GetLastDay(t time.Time) time.Time {
