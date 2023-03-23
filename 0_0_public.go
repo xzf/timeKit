@@ -15,7 +15,7 @@ func ToDate(t time.Time) time.Time {
 
 func GetDateEnd(t time.Time) time.Time {
 	t = ToDate(t)
-	return t.Add(time.Nanosecond * -1)
+	return t.Add(Day).Add(time.Nanosecond * -1)
 }
 
 func GetMonthStart(t time.Time) time.Time {
